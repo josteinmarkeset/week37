@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movies List</title>
+</head>
+<body>
+    <h1>Favorite Movies</h1>
+    <button onclick="showMovies()">Show all movies</button>
+    <button onclick="showMovie(3, true)">Movie 3</button>
+
+    <br>
+    <br>
+
+    <input type="text" id="newMovieName">
+    <button onclick="addMovie()">Add movie</button>
+
+    <ul id="moviesList"></ul>
+</body>
+<script>
+    // Elements
+    const moviesListElement = document.getElementById('moviesList');
+    const newMovieNameElement = document.getElementById('newMovieName');
+
+    // Movies list
+    const movies = ['Inception', 'The Dark Knight Rises', 'The Da Vinci Code', 'Inferno'];
+
+     ///////////////////////
+    // --- Functions --- //
+
+    function addMovie() {
+        const movieName = newMovieNameElement.value;
+
+        if(!movieName)
+            return console.error('Invalid movie name!');
+
+        movies.push(movieName); // Add new movie to movies list
+        showMovies(); // Show updated movies list
+    }
+
+    function showMovie(movieNumber, clear = false) {
+        const movieIndex = movieNumber - 1; // Convert to 0 based counting
+        if(clear) // Clear if specified
+            reset();
+
+        moviesListElement.innerHTML += "<li>" + movies[movieIndex] + "</li>"; // Show movie
+    }
+
+    function showMovies(shouldShow = true) {
+        reset(); // Clear before showing new data
+
+        if(shouldShow) {
+            for (let i = 1; i < movies.length + 1; i++) {
+                showMovie(i);
+            }
+        }
+    }
+
+    function reset() {
+        moviesListElement.innerText = ""; // Clear text from element
+    }
+</script>
+</html>
