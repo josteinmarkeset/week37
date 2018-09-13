@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Check the console</h3>
+    <script>
+        // Song object constructor
+        function Song(title, artist) {
+            this.title = title;
+            this.artist = artist;
+        }
+
+        // Create song objects from Song constructor
+        const song_1 = new Song('Viva La Vida', 'Coldplay');
+        const song_2 = new Song('Eine kleine Nachtmusik', 'Mozart');
+        const song_3 = new Song('Sogno di Volare', 'Christopher Tin');
+
+        // Task is to change the tile of song 1
+        song_1.title = 'Fix You';
+
+        // Display results in the console
+        console.log('========== SONGS ==========');
+        console.log(song_1);
+        console.log(song_2);
+        console.log(song_3);
+    </script>
+</body>
+</html>
