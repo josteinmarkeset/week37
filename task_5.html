@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 5</title>
+    <style>
+        img {
+            display: block;
+            max-width: 600px;
+            max-height: 400px;
+        }
+    </style>
+</head>
+<body>
+    What is the tallest mountain in the world?
+    <select id="mountain">
+        <option value="K2">K2</option>
+        <option value="everest">Mt. Everest</option>
+        <option value="denali">Denaili</option>
+    </select>
+    <button onclick="submitAnswer()">Submit</button>
+    <img id="resultImage" src="">
+
+    <script>
+        // Elements
+        const answerElement = document.getElementById('mountain');
+        const imageElement = document.getElementById('resultImage')
+        const correctAnswer = 'everest'
+    
+        // --- Functions --- //
+    
+        function submitAnswer() {
+            if(answerElement.value === correctAnswer)
+                correct();
+            else
+                wrong();
+        }
+    
+        function correct() {
+            imageElement.src = 'http://www.pngall.com/wp-content/uploads/2017/05/Congratulation-Free-Download-PNG.png';
+            setTimeout(() => {
+                alert('Congratulations! Mt. Everest is the correct answer.');
+            }, 100)  
+        }
+    
+        function wrong() {
+            imageElement.src = 'https://qph.fs.quoracdn.net/main-qimg-436acc542b699348edca1a2e922097b2';
+            setTimeout(() => {
+                alert('Wrong! Mt. Everest was the correct answer.');
+            }, 100)        
+        }
+    
+    </script>
+</body>
+</html>

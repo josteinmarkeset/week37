@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 4</title>
+</head>
+<body>
+    <h3>Use function Thundercoaster(height) or Ragnarok(height) in the console, to check if a person with the selected height is allowd to ride either of the rides.</h3>
+    
+    <script>
+        // Config
+        const height = 140;
+        const lowerLimit = 100;
+        const upperLimit = 180;
+
+        // Checks if person is allowed to ride Thundercoaster
+        function Thundercoaster(height) {
+            return height > lowerLimit;
+        }
+
+        // Checks if person is allowed to ride Ragnarok
+        function Ragnarok(height) {
+            return height > lowerLimit && height < upperLimit;
+        }
+    </script>
+</body>
+</html>

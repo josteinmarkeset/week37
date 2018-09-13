@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 3</title>
+    <style>
+        body { text-align: center }
+        button {
+            display: block;
+            margin: 16px auto;
+        }
+        img {
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="randomImage()">Random Image</button>
+    <img id="image" src="./img/1.jpg" width="800px" height="800px">
+
+    <script>
+        function randomImage() {
+            // Elements
+            const imageElement = document.getElementById('image');
+
+            // Count of images in /img
+            const IMAGE_COUNT = 3;
+            
+            // Get random image and display it
+            const random = Math.ceil(Math.random() * IMAGE_COUNT); // Random integer between 1 and IMAGE_COUNT
+            imageElement.src = "./img/" + random.toString() + ".jpg";
+        }
+    </script>
+</body>
+</html>
